@@ -3,7 +3,7 @@ name: Construir y desplegar
 on:
   push:
     branches:
-      - main
+      - master
       
 
 jobs:
