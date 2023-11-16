@@ -9,10 +9,9 @@ public class DatosCliente {
     private String servicioPacId;
     private String rut;
     private String nombreCliente;
+    private String apellido;
     private String nombreBanco;
     private Long cuentasId;
     private Long monto;
     private String nombreProducto;
-
-
 }
