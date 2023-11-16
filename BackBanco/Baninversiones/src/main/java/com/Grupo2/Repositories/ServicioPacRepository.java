@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface ServicioPacRepository extends JpaRepository<ServicioPac,Long> {
 
-    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
+    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre, cli.apellido, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
             "FROM ServicioPac pac " +
             "INNER JOIN Producto prod ON prod.productoId = pac.producto.productoId " +
             "INNER JOIN Clientes cli ON cli.clientesId = pac.cliente.clientesId " +
@@ -24,7 +24,7 @@ public interface ServicioPacRepository extends JpaRepository<ServicioPac,Long> {
             @Param("productoIdParam") Long productoId,
             @Param("dayParam") int day
     );
-    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
+    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre,cli.apellido, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
             "FROM ServicioPac pac " +
             "INNER JOIN Producto prod ON prod.productoId = pac.producto.productoId " +
             "INNER JOIN Clientes cli ON cli.clientesId = pac.cliente.clientesId " +
@@ -35,7 +35,7 @@ public interface ServicioPacRepository extends JpaRepository<ServicioPac,Long> {
             @Param("productoIdParam") Long productoId
 
     );
-    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
+    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre,cli.apellido, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
             "FROM ServicioPac pac " +
             "INNER JOIN Producto prod ON prod.productoId = pac.producto.productoId " +
             "INNER JOIN Clientes cli ON cli.clientesId = pac.cliente.clientesId " +
@@ -47,7 +47,7 @@ public interface ServicioPacRepository extends JpaRepository<ServicioPac,Long> {
             @Param("dayParam") int day
 
     );
-    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
+    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre,cli.apellido, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
             "FROM ServicioPac pac " +
             "INNER JOIN Producto prod ON prod.productoId = pac.producto.productoId " +
             "INNER JOIN Clientes cli ON cli.clientesId = pac.cliente.clientesId " +
@@ -59,7 +59,7 @@ public interface ServicioPacRepository extends JpaRepository<ServicioPac,Long> {
             @Param("dayParam")int day);
 
 
-    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
+    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre,cli.apellido, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
             "FROM ServicioPac pac " +
             "INNER JOIN Producto prod ON prod.productoId = pac.producto.productoId " +
             "INNER JOIN Clientes cli ON cli.clientesId = pac.cliente.clientesId " +
@@ -69,7 +69,7 @@ public interface ServicioPacRepository extends JpaRepository<ServicioPac,Long> {
             @Param("productoIdParam") Long productoId
     );
 
-    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
+    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre,cli.apellido, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
             "FROM ServicioPac pac " +
             "INNER JOIN Producto prod ON prod.productoId = pac.producto.productoId " +
             "INNER JOIN Clientes cli ON cli.clientesId = pac.cliente.clientesId " +
@@ -80,7 +80,7 @@ public interface ServicioPacRepository extends JpaRepository<ServicioPac,Long> {
             @Param("dayParam")int day
     );
 
-    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
+    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre,cli.apellido, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
             "FROM ServicioPac pac " +
             "INNER JOIN Producto prod ON prod.productoId = pac.producto.productoId " +
             "INNER JOIN Clientes cli ON cli.clientesId = pac.cliente.clientesId " +
@@ -90,12 +90,12 @@ public interface ServicioPacRepository extends JpaRepository<ServicioPac,Long> {
     List<DatosCliente> findByRut(
             @Param("rutParam") String rut
     );
-    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
+    @Query("SELECT NEW com.Grupo2.DTO.DatosCliente(pac.servicioPacId, cli.rut, cli.nombre,cli.apellido, cue.nombreBanco, cue.cuentasId, pac.monto, prod.nombreProducto) " +
             "FROM ServicioPac pac " +
             "INNER JOIN Producto prod ON prod.productoId = pac.producto.productoId " +
             "INNER JOIN Clientes cli ON cli.clientesId = pac.cliente.clientesId " +
             "INNER JOIN Cuentas cue ON cue.cliente.clientesId = cli.clientesId "
-            )
+    )
     List<DatosCliente> findByAll(
 
     );
